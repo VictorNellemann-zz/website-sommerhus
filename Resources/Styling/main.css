@@ -1,15 +1,16 @@
 /* CSS Variables */
 
 :root {
-    --primary: #ddd;
+    --primary: #eee;
     --secondary: #B23C50;
     --dark: #333;
-    --light: #eee;
+    --light: #fff;
 }
 
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 15px;
+    font-family: Mukta, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    color: var(--dark)
 }
 
 /* Universal */
@@ -21,7 +22,25 @@ body {
 }
 
 p {
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.3rem;
+}
+
+h1 {
+    font-family: "Noto serif", Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.8rem;
+    margin: 0 0 0.3rem 0;
+}
+
+h2 {    
+    font-family: "Noto serif", Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+    margin: 1.4rem 0 0.3rem 0;
+}
+
+h3 {    
+    font-family: "Noto serif", Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.2rem;
+    margin: 0 0 0.5rem 0;
 }
 
 .btn {
@@ -37,7 +56,6 @@ p {
     cursor: pointer;
 }
 
-
 /* Header & Navigaion */
 
 header {
@@ -50,8 +68,10 @@ header {
 }
 
 .logo {
-    font-size: 2rem;
+    font-family: "Noto serif", Georgia, 'Times New Roman', Times, serif;
+    font-size: 3rem;
     line-height: 0;
+    margin: 0;
 }
 
 nav {
@@ -61,7 +81,6 @@ nav {
 }
 
 nav a {
-    position: relative;
     height: auto;
     padding: 1rem;
     margin-left: 1rem;
@@ -80,7 +99,7 @@ text-decoration: underline;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 1rem;
-    grid-template-rows: 200px 200px 300px;
+    grid-template-rows: 200px 200px 400px;
     grid-template-areas: 
         'top-box-info top-hero top-hero'
         'top-box-info top-hero top-hero'
@@ -88,21 +107,19 @@ text-decoration: underline;
     margin: 2rem 0;
 }
 
-.top-container h2 {
-    line-height: 0;
-    margin-bottom: 1rem;
-}
-
 .top-box-info {
     grid-area: top-box-info;
-    background-color: var(--light);
-    padding: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--primary);
+    padding: 2rem;
 }
 
 .top-hero {
     grid-area: top-hero;
-    background-color: var(--light);
-    background-image: url("../../Resources/Media/images/odsherred-strand.jpg");
+    background-color: var(--primary);
+    background-image: url("../../Resources/Media/images/hus-front.jpg");
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -121,5 +138,5 @@ text-decoration: underline;
 
 .loc-box {
     grid-area: loc-box;
-    background-color: var(--light);
+    background-color: var(--primary);
 }
