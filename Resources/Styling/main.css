@@ -43,10 +43,14 @@ h3 {
     margin: 0 0 0.5rem 0;
 }
 
+h4 {
+    margin: 0.5rem 0 0.3rem 0;
+}
+
 .btn {
+    display: block;
     background-color: var(--secondary);
     color: var(--light);
-    display: inline-block;
     padding: 0.8rem;
     margin-bottom: 1.2rem;
     text-align: center;
@@ -64,7 +68,7 @@ header {
     grid-gap: 1rem;
     grid-auto-rows: auto;
     align-items: center;
-    border-bottom: var(--primary) dashed 1px;
+    border-bottom: #a2a2a2 dashed 1px;
 }
 
 .logo {
@@ -93,7 +97,8 @@ nav a:hover {
 text-decoration: underline;
 }
 
-/* top-content */
+
+/* Content styling */
 
 .top-container {
     display: grid;
@@ -114,6 +119,14 @@ text-decoration: underline;
     justify-content: space-between;
     background-color: var(--primary);
     padding: 2rem;
+}
+
+.form-element {
+    width: 200px;
+    margin-bottom: 1rem;
+    padding: 4px;
+    color: var(--dark);
+    border-color: #ddd;
 }
 
 .top-hero {
