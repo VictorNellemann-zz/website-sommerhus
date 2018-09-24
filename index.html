@@ -22,7 +22,7 @@
             </nav>
         </header>
         <div class="top-container">
-            <div class="top-box-info">
+            <div class="box-info">
                 <div>
                     <h1>Kort om huset</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
@@ -30,30 +30,26 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
                 </div>
                 <div class="box-calculator">
-                    <form>
+                    <form name="form-calculator">
                         <h2>Beregn pris for ophold</h2>
-                        <p id="price"></p>
-                        <script src="./resources/scripts/calculator.js" type="text/javascript"></script>
-                        <h4>Dag for ankomst</h4>
-                        <select name="arrival" id="select-first-day" class="form-element">
-                            <option value="Vælg dag">Vælg dag</option>
-                        </select>
+                        <!-- <h4>Dag for ankomst</h4>
+                            <select name="arrival" id="select-first-day" class="form-element">
+                                <option value="Vælg dag">Vælg dag</option>
+                            </select> -->
                         <h4>Antal dage for ophold</h4>
                         <select name="number-of-days" id="number-of-days" class="form-element">
                             <option value="set-number-of-days">Angiv dage</option>
                         </select>
-                        <h4>Medbringer du selvsengetøj og hånklæder?</h4>
+                        <h4>Medbringer selv selvsengetøj & hånklæde</h4>
                         <select name="laundry" id="laundry" class="form-element">
                             <option value="yes">Ja</option>
                             <option value="no">Nej</option>
                         </select>
-                        <input type="submit" class="btn">
+                        <script src="./resources/scripts/calculator.js" type="text/javascript"></script>
+                        <p id="price">Pris</p>
+                        <button class="btn" onclick="createPrice()">Beregn pris</button>
                     </form>
                     <script src="./resources/scripts/main.js" type="text/javascript"></script>
-                </div>
-                <div>
-                    <h3>Adresse:</h3>
-                    <p>Lærkelodden<br>4500 Nykøbing Sjælland</p>
                 </div>
             </div>
             <div class="top-hero">
