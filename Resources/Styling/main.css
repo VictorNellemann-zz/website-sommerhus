@@ -34,7 +34,7 @@ h1 {
 h2 {    
     font-family: "Noto serif", Georgia, 'Times New Roman', Times, serif;
     font-size: 1.5rem;
-    margin: 1.4rem 0 0.3rem 0;
+    margin: 1.4rem 0 0.8rem 0;
 }
 
 h3 {    
@@ -59,6 +59,7 @@ h4 {
     border-radius: 5px;
     cursor: pointer;
 }
+
 
 /* Header & Navigaion */
 
@@ -94,7 +95,7 @@ nav a {
 }
 
 nav a:hover {
-text-decoration: underline;
+    text-decoration: underline;
 }
 
 
@@ -106,9 +107,9 @@ text-decoration: underline;
     grid-gap: 1rem;
     grid-template-rows: 200px 200px 400px;
     grid-template-areas: 
-        'box-info top-hero top-hero'
-        'box-info top-hero top-hero'
-        'box-info loc-box loc-box';
+    'box-info top-hero top-hero'
+    'box-info top-hero top-hero'
+    'box-info loc-box loc-box';
     margin: 2rem 0;
 }
 
@@ -121,8 +122,17 @@ text-decoration: underline;
     padding: 2rem;
 }
 
+table {
+width: 100%;
+margin-bottom: 1rem;  
+}
+
+.align-right {
+    text-align: end;
+}
+
 .form-element {
-    width: 200px;
+    width: 100%;
     margin-bottom: 1rem;
     padding: 4px;
     color: var(--dark);

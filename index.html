@@ -8,7 +8,7 @@
     <title>Sommerhus udlejes</title>
     <link rel="stylesheet" type="text/css" media="screen" href="./resources/styling/main.css" />
     <link href="https://fonts.googleapis.com/css?family=Mukta:400,700|Noto+Serif:400,700" rel="stylesheet">     
-</head>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script></head>
 <body>
     <div class="wrapper">
         <header>
@@ -31,32 +31,45 @@
                 </div>
                 <div class="box-calculator">
                     <form name="form-calculator">
-                        <h2>Beregn pris for ophold</h2>
+                        <h2>Pris for lån af huset</h2>
                         <!-- <h4>Dag for ankomst</h4>
                             <select name="arrival" id="select-first-day" class="form-element">
                                 <option value="Vælg dag">Vælg dag</option>
                             </select> -->
+                        <table id="priceOverview">
+                            <tr>
+                                <td>Lån per dag:</td>
+                                <td id="base-price-per-day" class="align-right">0</td>
+                            </tr>
+                            <tr>
+                                <td>Ca. el per dag:</td>
+                                <td id="electricity-cost-per-day" class="align-right">0</td>
+                            </tr>
+                            <tr>
+                                <td>Lån(vask) af sengetøj & håndklæder:</td>
+                                <td id="laundry-fee" class="align-right">0</td>
+                            </tr>
+                        </table>
                         <h4>Antal dage for ophold</h4>
                         <select name="number-of-days" id="number-of-days" class="form-element">
-                            <option value="set-number-of-days">Angiv dage</option>
                         </select>
-                        <h4>Medbringer selv selvsengetøj & hånklæde</h4>
+                        <h4>Medbringer selv sengetøj & hånklæder</h4>
                         <select name="laundry" id="laundry" class="form-element">
-                            <option value="yes">Ja</option>
                             <option value="no">Nej</option>
+                            <option value="yes">Ja</option>
                         </select>
-                        <script src="./resources/scripts/calculator.js" type="text/javascript"></script>
-                        <p id="price">Pris</p>
-                        <button class="btn" onclick="createPrice()">Beregn pris</button>
+                        <table>
+                            <tr>
+                                <td>Pris for lån af hus</td>
+                                <td id="price" class="align-right">0 kr.</td>
+                            </tr>
+                        </table>
+                        <input type="button" id="calculate" class="btn" name="calculate" value="Beregn Pris">
                     </form>
-                    <script src="./resources/scripts/main.js" type="text/javascript"></script>
+                    <script src="./resources/scripts/calculator.js" type="text/javascript"></script>
                 </div>
             </div>
             <div class="top-hero">
-                <!-- <div class="hero-text">
-                    <h2>Nyryp Strand</h2>
-                    <button class="btn">Se flere billeder</button>
-                </div> -->
             </div>
             <div class="loc-box">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60255.2131679809!2d11.576845394048405!3d55.858367719859636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464d8a3b01c6b26d%3A0x84f6188dc91c24c5!2zTMOmcmtlbG9kZGVuLCA0NTAwIE55a8O4YmluZyBTasOmbGxhbmQ!5e0!3m2!1sda!2sdk!4v1537466531109" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
