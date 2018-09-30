@@ -47,20 +47,6 @@ h4 {
     margin: 0.5rem 0 0.5rem 0;
 }
 
-.btn {
-    display: block;
-    background-color: var(--secondary);
-    color: var(--light);
-    padding: 0.8rem;
-    margin-top: 1rem;
-    text-align: center;
-    text-decoration: none;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-
 /* Header & Navigaion */
 
 header {
@@ -92,14 +78,22 @@ nav a {
     background-color: rgb(241, 241, 241);
     text-decoration: none;
     color: var(--dark);
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 nav a:hover {
+    background-color: var(--secondary);
+    color: var(--light);
     text-decoration: underline;
 }
 
-
 /* Content styling */
+
+table {
+    width: 100%;
+    margin-bottom: 1rem;  
+}
 
 .top-container {
     display: grid;
@@ -109,7 +103,7 @@ nav a:hover {
     grid-template-areas: 
     'box-info top-hero top-hero'
     'box-info top-hero top-hero'
-    'box-info loc-box loc-box';
+    'box-info loc-box loc-info';
     margin: 2rem 0;
 }
 
@@ -122,29 +116,38 @@ nav a:hover {
     padding: 2rem;
 }
 
-table {
-width: 100%;
-margin-bottom: 1rem;  
-}
-
 .align-right {
     text-align: end;
 }
 
 .form-element {
     width: 100%;
+    font-size: 0.9rem;
     margin-bottom: 1rem;
-    padding: 4px;
+    padding: 3%;
     color: var(--dark);
     border: 1px solid rgb(219, 219, 219);
+}
+
+.btn {
+    display: block;
+    background-color: var(--secondary);
+    color: var(--light);
+    padding: 0.8rem;
+    margin: 1rem 0 1.6rem 0;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .top-hero {
     grid-area: top-hero;
     background-color: var(--primary);
-    background-image: url("../../Resources/Media/images/hus-front.jpg");
+    background-image: url("../../Resources/Media/images/hus-blomster.jpg");
     height: 100%;
-    background-position: center;
+    background-position: center left;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
@@ -162,4 +165,21 @@ margin-bottom: 1rem;
 .loc-box {
     grid-area: loc-box;
     background-color: var(--primary);
+}
+
+.loc-info {
+    grid-area: loc-info;
+    padding: 1rem 2.5rem;
+    background-color: var(--primary);
+}
+
+#table-price {
+    margin-bottom: 0;
+    /* background-color: #fff; */
+}
+
+#table-price td {
+    border-top: 1px dashed #b0b0b0;
+    font-size: 1.3rem;
+    padding-top: 1rem;
 }
