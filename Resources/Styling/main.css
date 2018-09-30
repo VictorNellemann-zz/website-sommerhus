@@ -1,5 +1,7 @@
 /* CSS Variables */
 
+/* TO-DO: Gennemgå variabler, så der kommer et bedre farvetema på plads. */
+/* TO-DO: Fjern afvigere fra variabler i styles */
 :root {
     --primary: #eee;
     --secondary: #B23C50;
@@ -50,36 +52,35 @@ h4 {
 /* Header & Navigaion */
 
 header {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1rem;
-    grid-auto-rows: auto;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    border-bottom: #a2a2a2 dashed 1px;
 }
 
 .logo {
     font-family: "Noto serif", Georgia, 'Times New Roman', Times, serif;
     font-size: 3rem;
-    line-height: 0;
-    margin: 0;
+    line-height: auto;
+    margin: 0 0 0.3rem 0;
 }
 
 nav {
+    width: 100%;
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
     padding: 1rem 0 2rem 0;
+    border-top: #a2a2a2 dashed 1px;
 }
 
 nav a {
     height: auto;
-    padding: 1rem;
-    margin-left: 1rem;
-    background-color: rgb(241, 241, 241);
+    padding: 0.6rem;
+    margin-left: 0.3rem;
+    background-color: var(--light);
     text-decoration: none;
     color: var(--dark);
-    border-top-right-radius: 10px;
-    border-bottom-left-radius: 10px;
+    /* border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px; */
 }
 
 nav a:hover {
@@ -95,16 +96,25 @@ table {
     margin-bottom: 1rem;  
 }
 
+/* TO-DO: Bryd grid-template ud i sin egen klasse, så den kan placeres mere centralt i toppen */
+
 .top-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 1rem;
-    grid-template-rows: 200px 200px 400px;
+    grid-template-rows: 200px 200px 200px 400px;
     grid-template-areas: 
+    'grid-container-header top-hero top-hero'
     'box-info top-hero top-hero'
     'box-info top-hero top-hero'
     'box-info loc-box loc-info';
     margin: 2rem 0;
+}
+
+.grid-container-header {
+    grid-area: grid-container-header ;
+    background-color: var(--primary);
+    padding: 2rem;
 }
 
 .box-info {
