@@ -3,7 +3,7 @@
 // Consider loading the prices through a JSON price-list saved on the server.
 
 const basePricePerDay = 250;
-const electricityCostPerDay = 50;
+const expenditurePerDay = 50;
 const laundryFee = 100;
 
 // Array som med et for loop som fylder arrayet 'numbers' med tal fra 1 til 14.
@@ -14,6 +14,7 @@ for(var i = 0; i <= 14; i++){
 }
 
 // Et for-loop som fylder formens select felt med tal fra et numbers array baseret på dets index
+
 var selectDays = document.getElementById("number-of-days");
 for(index in numbers) {
     selectDays.options[selectDays.options.length] = new Option(numbers[index], index);
@@ -21,13 +22,13 @@ for(index in numbers) {
 
 // Declaring and calling a function that loads base prices into a price table in the frontend.
 
-function listPrices(basePricePerDay, electricityCostPerDay, laundryFee) {
+function listPrices(basePricePerDay, expenditurePerDay, laundryFee) {
     document.getElementById("base-price-per-day").innerHTML = basePricePerDay + " kr.";
-    document.getElementById("electricity-cost-per-day").innerHTML = electricityCostPerDay + " kr.";
+    document.getElementById("expenditure-per-day").innerHTML = expenditurePerDay + " kr.";
     document.getElementById("laundry-fee").innerHTML = laundryFee + " kr.";
 };
 
-listPrices(basePricePerDay, electricityCostPerDay, laundryFee);
+listPrices(basePricePerDay, expenditurePerDay, laundryFee);
 
 // Declaring the main function that does the actual calculation based on user input and our base prices
 
@@ -54,7 +55,7 @@ function calculatePrice() {
     };
     
     function updatePrice() {
-        priceOfStay = (basePricePerDay + electricityCostPerDay) * numberOfDays;
+        priceOfStay = (basePricePerDay + expenditurePerDay) * numberOfDays;
         if (addLaundryFee == true && priceOfStay !== 0) {
             priceOfStay = priceOfStay + laundryFee;
         }
@@ -63,11 +64,11 @@ function calculatePrice() {
 
     updateNumberOfDays(numberOfDays);
     updateLaudryFee();
-    updatePrice(basePricePerDay, electricityCostPerDay, numberOfDays, laundryFee, addLaundryFee);    
+    updatePrice(basePricePerDay, expenditurePerDay, numberOfDays, laundryFee, addLaundryFee);    
     document.getElementById("price").innerHTML = priceOfStay + " kr.";
 };
 
 // Adding a click event-listener to the page.
-// The click-event calls the calculator, that returns a calculated price to a p-tag.
+// The click-event calls the calculator, that in turn returns a calculated price to a p-tag in the mark-up.
 
 document.getElementById("calculate").addEventListener("click", calculatePrice);
