@@ -20,7 +20,7 @@
                     </div>
                     <nav>
                         <a href="index.php">Forside</a>
-                        <a href="#"">Registrer</a>
+                        <a href="#">Registrer</a>
                         <a href="#">Området</a>
                     </nav>
                 </header>                
@@ -82,24 +82,28 @@
             </div>
             <!-- TO-DO: loc-info skal omdøbes, så div-en følger grid'ets naming-convention -->
             <div id="widget-weather" class="grid-item">
-                <script src="./resources/scripts/weather-api.js" type="text/javascript"></script>
+
             </div>
         </div>
         <div class="grid-setup-content">
             <div id="expenditures-form" class="grid-content-left grid-item">
-                <p>Placeholder</p>
+                <h2>Registrer forbrug</h2>
+                <?php
+                    include("./includes/registration-form.php");
+                ?>
+                <script src="./resources/scripts/expenditure-log.js" type="text/javascript"></script>
             </div>
             <div id="expenditures-log" class="grid-item">
-                <h1>Registreret forbrug</h1>
+                <h1>Oversigt over forbrug</h1>
                 <?php
-                    $conn = new mysqli("localhost", "root", "", "sommerhus-website");
-                    if (mysqli_connect_errno())
+                    include("./includes/database-connection.php");                    
+                    if (mysqli_connect_errno($conn))
                     {
                         echo "Failed to connect to MySQL: " . mysqli_connect_error();
                     }
 
                     $sqlQ = "SELECT * FROM `expenditure_log` ORDER BY date_of_arrival DESC";
-                    $result = $conn->query( $sqlQ );
+                    $result = $conn->query($sqlQ);
                     
                     echo "<table border='0'>
                     <tr>

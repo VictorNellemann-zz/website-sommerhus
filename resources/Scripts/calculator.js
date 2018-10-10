@@ -71,4 +71,6 @@ function calculatePrice() {
 // Adding a click event-listener to the page.
 // The click-event calls the calculator, that in turn returns a calculated price to a p-tag in the mark-up.
 
-document.getElementById("calculate").addEventListener("click", calculatePrice);
+window.addEventListener("load", function(){
+    document.getElementById("calculate").addEventListener("click", calculatePrice);
+});
